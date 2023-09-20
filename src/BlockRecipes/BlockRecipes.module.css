@@ -1,0 +1,19 @@
+.card {
+    width: 20rem;
+    margin: 20px;
+    transition: transform 1s, background 1s;
+
+}
+
+.card:hover {
+    z-index: 99;
+    transform: scale(1.2)
+}
+
+.cardFooter {
+    display: flex;
+   justify-content: space-between;
+}
+.cardBody{
+    cursor: pointer;
+}

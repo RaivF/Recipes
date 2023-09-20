@@ -1,0 +1,7 @@
+.MainContainer{
+  background-image: url("https://img.freepik.com/free-photo/vegetables-set-to-the-left-of-a-black-slate_1220-685.jpg?w=2000&t=st=1694570798~exp=1694571398~hmac=8b08dcac0d4e3fbf8a6b8cd2fed585210d5fd5391eb2368189c637d42239368a");
+  min-height: 100vh;
+  background-repeat:no-repeat ;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+}
