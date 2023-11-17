@@ -12,7 +12,7 @@ export let BlockRecipes = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     let variantDifficulty = props.difficulty === "сложно" ? "danger" :
-        props.difficulty === "средне" ? "warning" : "info"
+        props.difficulty ===                     "средне" ? "warning" : "info"
 
     let callbackModalOpen = ()=>{
         handleShow()
@@ -23,16 +23,14 @@ export let BlockRecipes = (props) => {
 
     return (
         <CardGroup>
-            <Card className={s.card}
-           >
+            <Card className={s.card}>
                 <Card.Img variant="top" src={props.src}/>
                 <Card.Body
                     className={s.cardBody}
-                    onClick={()=>{callbackModalOpen()}}
-                >
+                    onClick={()=>{callbackModalOpen()}}>
                     <Card.Title>{props.name}</Card.Title>
                     <Card.Text>
-                        {props.description.map((el)=>{
+                        {props.ingredient.map((el)=>{
                             return <div>{el}</div>
                         })}
                     </Card.Text>
@@ -46,9 +44,11 @@ export let BlockRecipes = (props) => {
                 </Card.Footer>
             </Card>
             <ModalRecipesInfo
+                src={props.src}
                 show={show}
                 name={props.name}
-                ingredient={props.description}
+                ingredient={props.ingredient}
+                recipe={props.recipe}
                 callbackModalClose={callbackModalClose}
             />
         </CardGroup>

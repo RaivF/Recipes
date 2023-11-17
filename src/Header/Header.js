@@ -7,14 +7,19 @@ import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {ModalContainer} from "../Modal/Modal";
+import {ModalContainer} from "../ModalLoginization/ModalLoginization";
 
-export let Header = () => {
+export let Header = (props) => {
     const [userName,setUserName] = useState("")
     let getUserName = () => {
-        setUserName( document.getElementById("inputUserName").value)
 
+        setUserName( '"'+ document.getElementById("filterWord").value+ '"')
     }
+
+   let setFilterWords = ()=>{
+       props.setFilterWord(document.getElementById("filterWord").value)
+   }
+
     return (
         <Navbar
             className="justify-content-around"
@@ -39,13 +44,15 @@ export let Header = () => {
                 <Row>
                     <Col xs="auto">
                         <Form.Control
+
                             type="text"
                             placeholder="Найти"
                             className=" mr-sm-2"
+                            id={"filterWord"}
                         />
                     </Col>
                     <Col xs="auto">
-                        <Button type="submit">Submit</Button>
+                        <Button   onClick={()=>{setFilterWords()}}>Submit</Button>
                     </Col>
                 </Row>
             </Form>

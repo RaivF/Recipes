@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import s from './Modal.module.css'
+import s from './ModalLoginization.module.css'
 
 export let ModalContainer = (props) => {
         const [show, setShow] = useState(false);
